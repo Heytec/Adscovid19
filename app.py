@@ -18,7 +18,7 @@ import dash
 
 
 app = dash.Dash()
-server = app.server
+#server = app.server
 
 
 
