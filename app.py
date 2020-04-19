@@ -19,6 +19,42 @@ import dash
 app = dash.Dash(
     __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}]
 )
+
+app.index_string = """<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TK8Q9SS');</script>
+<!-- End Google Tag Manager -->
+        <title>ADS Research Center</title>
+        
+        {%favicon%}
+        {%css%}
+          {%metas%}
+    </head>
+    <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK8Q9SS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+          <h>2020 ADS Research Center &nbsp; </h>
+          <h>&nbsp; Contact us: africadataschool@gmail.com </h>
+          <h>&nbsp; &nbsp;  Credits :Africa Data School Team,Johns Hopkins University,Covid19API-Kyle Redelinghuys and Ushahidi</h>
+        </footer>
+    </body>
+</html>"""
+
+
+
 server = app.server
 
 
@@ -115,10 +151,10 @@ app.layout = html.Div(
                         ),
 
                         html.P(
-                            "Data is sourced from Johns Hopkins CSSE,Ministry of Health Kenya,Daily Nation and Ushahidi.  ",
+                            "Data is sourced from Johns Hopkins CSSE,Ministry of Health Kenya and Ushahidi.  ",
                             className="control_label",
                         ),
-                            html.P("December 2019, a local outbreak of pneumonia was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of Feb 17, 2020.3 In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and development at Africa Data School to visualise and track  Kenya reported cases of coronavirus disease.",
+                            html.P("December 2019, a local outbreak  was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of April 17, 2020.4. In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and Development at Africa Data School to visualise and track  Kenya daily reported cases of coronavirus disease.",
                             className="control_label",
 
                                    ),
@@ -380,9 +416,9 @@ def update_figure(well_statuses):
                 'title': 'Date'
             },
             yaxis={
-                'title': 'Confirmed'
+                'title': 'Confirmed '
             },
-          title='Confirmed'
+          title='Confirmed Curve'
 
         )
     }
