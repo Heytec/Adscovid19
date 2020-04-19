@@ -115,7 +115,7 @@ app.layout = html.Div(
                         ),
 
                         html.P(
-                            "Data is sourced from Johns Hopkins CSSE .  "
+                            "Data is sourced from Johns Hopkins CSSE,Ministry of health Kenya,Daily Nation and Ushahidi  "
                             "December 2019, a local outbreak of pneumonia was detected in Wuhan (Hubei, China), and was quickly determined to be caused by a novel coronavirus,1 namely COVID-19. The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2million confirmed cases as of Feb 17, 2020.3 In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and development at Africa Data School to visualise and track  Kenya reported cases of coronavirus disease in real-time.  ",
                             className="control_label",
                         ),
@@ -178,7 +178,8 @@ app.layout = html.Div(
             [
                 html.Div(
 
-                        [dcc.Graph(id="three_graph")],
+                        [ html.Label("3D Representation of cases"),
+                            dcc.Graph(id="three_graph")],
                       className="pretty_container seven columns",
 
                 ),
@@ -189,6 +190,38 @@ app.layout = html.Div(
             ],
             className="row flex-display",
         ),
+
+        html.Div(
+            [
+                html.Div(
+
+                    [  html.Label("Ministry of Health Kenya • Last Updated"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',width=300,height=400)],
+                    className="pretty_container three columns",
+                ),
+                html.Div(
+                    [ html.Label("The map shows the county of residence of persons that have tested positive"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1',width=400,height=400)],
+                    className="pretty_container four columns",
+                ),
+
+                html.Div(
+                    [
+                     html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=400,
+                                 height=400)],
+                    className="pretty_container four columns",
+                ),
+
+
+
+
+            ],
+            className="row flex-display",
+        ),
+
+
+
+
     ],
     id="mainContainer",
     style={"display": "flex", "flex-direction": "column"},
