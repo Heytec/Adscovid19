@@ -72,7 +72,7 @@ app.layout = html.Div(
                         html.Div(
                             [
                                 html.H3(
-                                    "Kenya Covid-19 Realtime Dashboard",
+                                    "Kenya Covid-19 Tracker",
                                     style={"margin-bottom": "0px"},
                                 ),
                                 html.H5(
@@ -115,10 +115,14 @@ app.layout = html.Div(
                         ),
 
                         html.P(
-                            "Data is sourced from Johns Hopkins CSSE,Ministry of health Kenya,Daily Nation and Ushahidi  "
-                            "December 2019, a local outbreak of pneumonia was detected in Wuhan (Hubei, China), and was quickly determined to be caused by a novel coronavirus,1 namely COVID-19. The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2million confirmed cases as of Feb 17, 2020.3 In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and development at Africa Data School to visualise and track  Kenya reported cases of coronavirus disease in real-time.  ",
+                            "Data is sourced from Johns Hopkins CSSE,Ministry of Health Kenya,Daily Nation and Ushahidi.  ",
                             className="control_label",
                         ),
+                            html.P("December 2019, a local outbreak of pneumonia was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of Feb 17, 2020.3 In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and development at Africa Data School to visualise and track  Kenya reported cases of coronavirus disease.",
+                            className="control_label",
+
+                                   ),
+
 
 
                     ],
@@ -129,7 +133,9 @@ app.layout = html.Div(
                     [
                         html.Div(
                             [
+
                                 html.Div(
+
                                     [html.H6(id="confirmed"), html.P("Confirmed")],
                                     id="wells",
                                     className="mini_container",
