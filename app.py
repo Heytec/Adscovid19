@@ -250,7 +250,7 @@ app.layout = html.Div(
                 ),
                 html.Div(
                     [ html.Label("The map shows the county of residence of persons that have tested positive"),
-                        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1',width=400,height=400,style={
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1',width=300,height=400,style={
                             "border":"0",
                             "framebolder":'0'
 
@@ -260,7 +260,7 @@ app.layout = html.Div(
 
                 html.Div(
                     [
-                     html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=400,
+                     html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=300,
                                  height=400,style={
                             "border":"0",
                             "framebolder":'0'
