@@ -48,7 +48,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {%renderer%}
           <h><cite> 2020 ADS R&D Center  </cite></h>
           <h>&nbsp;<cite> Contact us: africadataschool@gmail.com </cite></h>
-         <h><cite>Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi</cite></h>
+         <h><cite>Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys,Daily Nation and Ushahidi</cite></h>
         </footer>
     </body>
 </html>"""
@@ -253,6 +253,12 @@ app.layout = html.Div(
                     className="pretty_container four columns",
                 ),
 
+                html.Div(
+                    [   html.Label("East Africa  ( Via Daily Nation)"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603846/embed?auto=1', width=400,
+                                    height=400)],
+                    className="pretty_container four columns",
+                ),
 
 
 
