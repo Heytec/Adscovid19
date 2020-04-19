@@ -46,9 +46,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {%config%}
             {%scripts%}
             {%renderer%}
-          <h>2020 ADS Research Center &nbsp; </h>
-          <h>&nbsp; Contact us: africadataschool@gmail.com </h>
-          <h>&nbsp; &nbsp;  Credits :Africa Data School Team,Johns Hopkins University,Covid19API-Kyle Redelinghuys and Ushahidi</h>
+          <h><cite> 2020 ADS R&D Center </cite></h>
+          <h>&nbsp;<cite> Contact us: africadataschool@gmail.com </cite></h>
+        
         </footer>
     </body>
 </html>"""
@@ -159,6 +159,11 @@ app.layout = html.Div(
 
                                    ),
 
+                        html.P(
+                            "Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi",
+                            className="control_label",
+
+                            ),
 
 
                     ],
