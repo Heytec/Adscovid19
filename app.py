@@ -46,9 +46,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {%config%}
             {%scripts%}
             {%renderer%}
-          <h><cite> 2020 ADS R&D Center </cite></h>
+          <h><cite> 2020 ADS R&D Center  </cite></h>
           <h>&nbsp;<cite> Contact us: africadataschool@gmail.com </cite></h>
-        
+         <h><cite>Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi</cite></h>
         </footer>
     </body>
 </html>"""
@@ -150,20 +150,14 @@ app.layout = html.Div(
                             className="dcc_control",
                         ),
 
-                        html.P(
-                            "Data is sourced from Johns Hopkins CSSE,Ministry of Health Kenya and Ushahidi.  ",
-                            className="control_label",
+
+                        html.Div(
+
+                            [
+                             html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',
+                                         width=300, height=400)],
+
                         ),
-                            html.P("December 2019, a local outbreak  was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of April 17, 2020.4. In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and Development at Africa Data School to visualise and track  Kenya daily reported cases of coronavirus disease.",
-                            className="control_label",
-
-                                   ),
-
-                        html.P(
-                            "Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi",
-                            className="control_label",
-
-                            ),
 
 
                     ],
@@ -309,7 +303,7 @@ def update_well_text(well_statuses):
     # confirmed last no
     Confirmedlastrow = df.tail(1)
     Confirmedno = Confirmedlastrow['Confirmed'].values[0]
-    return Confirmedno
+    return #Confirmedno
 
 #recoverd cases ......................................................
 
@@ -328,7 +322,7 @@ def update_well_text(well_statuses):
     recoverdlastrow = df.tail(1)
     revoverdno = recoverdlastrow['Recovered'].values[0]
     revoverdno
-    return  revoverdno
+    return  #revoverdno
 
 #death.......................................................................
 
@@ -349,7 +343,7 @@ def update_well_text(well_statuses):
     Deathslastrow = df.tail(1)
     Deathsno = Deathslastrow['Deaths'].values[0]
     Deathsno
-    return  Deathsno
+    return  #Deathsno
 
 
 

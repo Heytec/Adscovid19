@@ -1,0 +1,16 @@
+  html.P(
+                            "Data is sourced from Johns Hopkins CSSE,Ministry of Health Kenya and Ushahidi.  ",
+                            className="control_label",
+                        ),
+                        html.P(
+                            "December 2019, a local outbreak  was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of April 17, 2020.4. In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and Development at Africa Data School to visualise and track  Kenya daily reported cases of coronavirus disease.",
+                            className="control_label",
+
+                            ),
+
+
+                        html.P(
+                            "Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi",
+                            className="control_label",
+
+                            ),
