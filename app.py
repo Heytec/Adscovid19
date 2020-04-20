@@ -11,6 +11,7 @@ import dash_html_components as html
 import plotly.graph_objs as go
 import dash
 import plotly.graph_objects as gos
+import plotly.express as px
 
 # Multi-dropdown options
 
@@ -291,12 +292,11 @@ app.layout = html.Div(
 
                     [html.Label("Hotspot"),
                      dcc.Graph(id="map_graph",style={
-                           "height": "700px",
-                          #" width": "1500px",
-                           "background-color": "powderblue"
+                           "height": "1000px",
+                          " width": "1500px",}
 
 
-                        },)
+                               )
 
                      ],
                    className="pretty_container twelve columns",
@@ -605,36 +605,16 @@ def update_figure(well_statuses):
 def update_figure(well_statuses):
     mapbox_access_token = "pk.eyJ1IjoiamFja2x1byIsImEiOiJjajNlcnh3MzEwMHZtMzNueGw3NWw5ZXF5In0.fk8k06T96Ml9CLGgKmk81w"
 
-    df1 = pd.read_csv("kenya_county.csv")
-    df1 = pd.DataFrame(df1)
+    df = pd.read_csv("kenya_county.csv")
+    df = pd.DataFrame(df)
+    mapbox_access_token = "pk.eyJ1IjoiamFja2x1byIsImEiOiJjajNlcnh3MzEwMHZtMzNueGw3NWw5ZXF5In0.fk8k06T96Ml9CLGgKmk81w"
+    px.set_mapbox_access_token(mapbox_access_token)
+    fig = px.scatter_mapbox(df, lat="lat", lon="lon", color="corona_cases", size="corona_cases",
+                            color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=5, hover_name='county',
+                            center=dict(lat=-0.02,
+                                        lon=37.91))
 
-    fig = gos.Figure(gos.Scattermapbox(
-        lat=df1.lat,
-        lon=df1.lon,
-        mode='markers',
-        marker=gos.scattermapbox.Marker(
-            size=20,
-            color=df1.corona_cases,
-        ),
-        text=df1.county,
-        hoverinfo='text'
-    ))
-
-    fig.update_layout(
-        hovermode='closest',
-        mapbox=dict(
-            accesstoken=mapbox_access_token,
-            bearing=0,
-            center=gos.layout.mapbox.Center(
-                lat=-0.02,
-                lon=37.91
-            ),
-            pitch=0,
-            zoom=5
-        )
-    )
-
-
+    #fig.show()
 
     return  fig
 
