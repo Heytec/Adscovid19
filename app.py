@@ -10,6 +10,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
 import dash
+import plotly.graph_objects as gos
 
 # Multi-dropdown options
 
@@ -280,7 +281,27 @@ app.layout = html.Div(
                     className="pretty_container four columns",
                 ),
 
+            ],
+            className="row flex-display",
+        ),
 
+        html.Div(
+            [
+                html.Div(
+
+                    [html.Label("Hotspot"),
+                     dcc.Graph(id="map_graph",style={
+                           "height": "700px",
+                          #" width": "1500px",
+                           "background-color": "powderblue"
+
+
+                        },)
+
+                     ],
+                   className="pretty_container twelve columns",
+
+                ),
 
             ],
             className="row flex-display",
@@ -290,7 +311,7 @@ app.layout = html.Div(
 
 
     ],
-    id="mainContainer",
+    #id="mainContainer",
     style={"display": "flex", "flex-direction": "column"},
 )
 
@@ -577,6 +598,45 @@ def update_figure(well_statuses):
     fig = go.Figure(data=traces, layout=layout)
     return  fig
 
+
+#map
+@app.callback(Output('map_graph', 'figure'),
+              [Input('kenya', 'value')])
+def update_figure(well_statuses):
+    mapbox_access_token = "pk.eyJ1IjoiamFja2x1byIsImEiOiJjajNlcnh3MzEwMHZtMzNueGw3NWw5ZXF5In0.fk8k06T96Ml9CLGgKmk81w"
+
+    df1 = pd.read_csv("kenya_county.csv")
+    df1 = pd.DataFrame(df1)
+
+    fig = gos.Figure(gos.Scattermapbox(
+        lat=df1.lat,
+        lon=df1.lon,
+        mode='markers',
+        marker=gos.scattermapbox.Marker(
+            size=20,
+            color=df1.corona_cases,
+        ),
+        text=df1.county,
+        hoverinfo='text'
+    ))
+
+    fig.update_layout(
+        hovermode='closest',
+        mapbox=dict(
+            accesstoken=mapbox_access_token,
+            bearing=0,
+            center=gos.layout.mapbox.Center(
+                lat=-0.02,
+                lon=37.91
+            ),
+            pitch=0,
+            zoom=5
+        )
+    )
+
+
+
+    return  fig
 
 
 

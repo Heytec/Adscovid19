@@ -1,0 +1,20 @@
+lat,lon,country,iso2,county,corona_cases
+-1.283333,36.816667,Kenya,KE,Nairobi City,122
+-4.054655,39.663588,Kenya,KE,Mombasa,55
+-0.283333,36.066667,Kenya,KE,Nakuru,5
+0.520356,35.269925,Kenya,KE,Uasin Gishu,2
+-1.516667,37.266667,Kenya,KE,Machakos,6
+-1.05,37.083333,Kenya,KE,Kiambu,7
+-3.217478,40.1191,Kenya,KE,Kilifi,10
+-0.358917,34.649238,Kenya,KE,Homa Bay,2
+-3.630453,39.849915,Kenya,KE,Kilifi,10
+0.284219,34.752285,Kenya,KE,Kakamega,2
+-0.420132,36.947594,Kenya,KE,Nyeri,1
+0.016667,37.07283,Kenya,KE,Laikipia,2
+-0.67394,34.772249,Kenya,KE,Kisii,1
+-1.85238,36.77683,Kenya,KE,Kajiado,3
+-0.934351,38.060047,Kenya,KE,Kitui,2
+3.93726,41.85688,kenya,KE,Mandera,6
+-4.17375,39.45206,kenya,KE,Kwale,1
+0.0768,34.7078,kenya,KE,Vihiga,1
+0.5669,34.9341,kenya,,Nyamira,1
