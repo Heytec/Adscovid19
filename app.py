@@ -428,23 +428,7 @@ html.Div([
                     className="row flex-display",
                 ),
 
-        html.Div(
-            [
-                html.Div(
 
-                    [html.Label("Hotspot"),
-                     dcc.Graph(id="map_graph",style={
-                           "height": "1000px",
-                          " width": "1500px",})
-
-                     ],
-                   className="pretty_container twelve columns",
-
-                ),
-
-            ],
-            className="row flex-display",
-        ),
 
 
 
@@ -870,7 +854,7 @@ def update_figure(well_statuses):
 
     #fig.show()
 
-    return  fig
+    return  #fig
 
 
 
