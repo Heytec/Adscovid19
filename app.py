@@ -398,6 +398,36 @@ html.Div([
             className="row flex-display",
         ),
 
+
+
+        html.Div(
+                    [
+                        html.Div([
+
+                            dash_table.DataTable(
+                                id='table',
+                                columns=[{"name": i, "id": i} for i in df.columns],
+                                data=df.to_dict('records'), style_table={'overflowX': 'scroll'},
+                                style_data_conditional=[{
+                                        "if": {"row_index": 7},
+                                        "backgroundColor": "#3D9970",
+                                        'color': 'white'
+                                    }]
+
+
+
+
+                            ),
+
+                        ],
+                            className="pretty_container twelve columns",
+
+                        ),
+
+                    ],
+                    className="row flex-display",
+                ),
+
         html.Div(
             [
                 html.Div(
@@ -416,38 +446,9 @@ html.Div([
             className="row flex-display",
         ),
 
-        html.Div(
-            [
-                html.Div([
-
-                    dash_table.DataTable(
-                        id='table',
-                        columns=[{"name": i, "id": i} for i in df.columns],
-                        data=df.to_dict('records'), style_table={'overflowX': 'scroll'},
-                        fixed_rows={'headers': True, 'data': 0},),
-
-                ],
-                    className="pretty_container twelve columns",
-
-                ),
-
-            ],
-            className="row flex-display",
-        ),
 
 
-
-
-
-
-
-
-
-
-
-
-
-    ],
+ ],
     #id="mainContainer",
     style={"display": "flex", "flex-direction": "column"},
 
