@@ -1,6 +1,5 @@
 import pandas as pd
 import dash
-
 import requests
 import pandas as pd
 import json
@@ -13,6 +12,7 @@ import dash
 import plotly.graph_objects as gos
 import plotly.express as px
 from bs4 import BeautifulSoup
+import dash_table
 
 # Multi-dropdown options
 
@@ -259,6 +259,41 @@ app.layout = html.Div(
             ],
             className="row flex-display",
         ),
+
+html.Div([
+        html.Div(
+            [
+            html.Div(
+
+                [html.H6(id="tested"), html.P("Tested")],
+                id="wells0O",
+                className="mini_container",
+            ),
+            html.Div(
+                     [html.H6(id="new_cases"), html.P("New Cases ")],
+                      id="gas0",
+                      className="mini_container",
+                        ),
+
+            html.Div(
+                            [html.H6(id="new_deaths"), html.P("New Deaths ")],
+                            id="oilO",
+                            className="mini_container",
+                        ),
+            html.Div(
+                            [html.H6(id="tot_cas_pop"), html.P("Total Cases/1M pop")],
+                            id="waterO",
+                            className="mini_container",
+                        ),
+
+
+        ], className="row container-display", ),
+
+],),
+
+
+
+
         html.Div(
             [
                 html.Div(
@@ -370,7 +405,8 @@ app.layout = html.Div(
 
 
 
-# active days ..........................................
+
+
 
 
 
@@ -476,6 +512,8 @@ def update_well_text(well_statuses):
         Input("kenya", "value"),
 
     ],)
+
+# world updatev
 def update_well_text(well_statuses):
     page = requests.get('https://www.worldometers.info/coronavirus/')
     soup = BeautifulSoup(page.text, 'html.parser')
@@ -484,6 +522,78 @@ def update_well_text(well_statuses):
 
     return  titletest
 
+
+#  total tested  cases in kenya
+@app.callback(
+    Output("tested", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    # total test
+    Total_test = kenya['Total Tests'].values[0]
+    Total_test
+
+
+    return  Total_test
+
+
+#  new cases  cases in kenya
+@app.callback(
+    Output("new_cases", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    # total test
+    # new cases
+    New_cases = kenya['New cases'].values[0]
+    New_cases
+
+
+    return New_cases
+
+
+# new deaths
+@app.callback(
+    Output("new_deaths", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    # total test
+    # new cases
+    # new death
+    New_deaths = kenya['New deaths'].values[0]
+    New_deaths
+
+
+    return New_deaths
+
+
+# total cases per 1 milliom
+@app.callback(
+    Output("tot_cas_pop", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    # total test
+    # new cases
+    # new death
+    Total_cases_pop = kenya['Total cases/1M pop'].values[0]
+    Total_cases_pop
+
+
+    return Total_cases_pop
 
 
 
