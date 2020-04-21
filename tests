@@ -85,6 +85,25 @@
 
 
 
+#table ckjvfn
+
+ html.Div(
+            [
+                html.Div([
+
+                    dash_table.DataTable(
+                        id='table',
+                        columns=[{"name": i, "id": i} for i in df.columns],
+                        data=df.to_dict('records'), ),
+
+                ],
+                    className="pretty_container twelve columns",
+
+                ),
+
+            ],
+            className="row flex-display",
+        ),
 
 
 
