@@ -133,6 +133,7 @@ def alldataframe(data):
                 'Continent']
 
     df = pd.DataFrame(data=data, columns=colnames)
+    df=df.head(14)
 
     return df
 
@@ -422,8 +423,8 @@ html.Div([
                     dash_table.DataTable(
                         id='table',
                         columns=[{"name": i, "id": i} for i in df.columns],
-                        data=df.to_dict('records'), fixed_columns={ 'headers': True, 'data': 1 },
-                                                    ),
+                        data=df.to_dict('records'), style_table={'overflowX': 'scroll'},
+                        fixed_rows={'headers': True, 'data': 0},),
 
                 ],
                     className="pretty_container twelve columns",
