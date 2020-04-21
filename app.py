@@ -354,7 +354,7 @@ html.Div([
             [
                 html.Div(
 
-                    [  html.Label("Ministry of Health Kenya • Last Updated"),
+                    [  html.Label("Daily Nation • Last Update"),
                         html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',width=300,height=400,style={
                             "border":"0",
                             "framebolder":'0'
