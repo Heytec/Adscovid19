@@ -12,6 +12,7 @@ import plotly.graph_objs as go
 import dash
 import plotly.graph_objects as gos
 import plotly.express as px
+from bs4 import BeautifulSoup
 
 # Multi-dropdown options
 
@@ -76,9 +77,43 @@ def readjsontodataframe(url):
     return df
 
 
+# web scrapping for coronavirus
+def GetDataWordMetric(url):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+
+    data = []
+    table = soup.find('table', id="main_table_countries_today")
+    table_body = table.find('tbody')
+
+    rows = table_body.find_all('tr')
+    for row in rows:
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        data.append(cols)  # Get rid of empty values
+    return data
 
 
+# make a dataframe and kenya dataonly
 
+def kenyadataframe(data):
+    colnames = ['Country',
+                'Total cases',
+                'New cases',
+                'Total deaths',
+                'New deaths',
+                'Total recovered',
+                'Active cases',
+                'Serious_critical cases',
+                'Total cases/1M pop',
+                'Deaths/1M pop',
+                'Total Tests',
+                'Test/1M pop',
+                'Continent']
+
+    df = pd.DataFrame(data=data, columns=colnames)
+    kenya = df[df.Country == 'Kenya']
+    return kenya
 
 # Create global chart template
 
@@ -191,6 +226,15 @@ app.layout = html.Div(
                                     id="oil",
                                     className="mini_container",
                                 ),
+                                html.Div(
+                                    [html.H6(id="active"), html.P("Active")],
+                                    id="water",
+                                    className="mini_container",
+                                ),
+
+
+
+
 
                             ],
                             id="info-container",
@@ -320,20 +364,9 @@ app.layout = html.Div(
 
 
 # active days ..........................................
-"""
-@app.callback(
-    Output("active", "children"), [
-        Input("kenya", "value"),
 
-    ],)
-def update_well_text(well_statuses):
-    url = 'https://api.covid19api.com/total/dayone/country/kenya/status/confirmed'
 
-    #url = 'https://api.covid19api.com/country/kenya'
-    df = readjsontodataframe(url)
 
-    return df.shape[0]
-"""
 
 #confirmed ......................................
 @app.callback(
@@ -343,14 +376,21 @@ def update_well_text(well_statuses):
     ],)
 def update_well_text(well_statuses):
     #url = 'https://api.covid19api.com/total/dayone/country/kenya/status/confirmed'
-    url = 'https://api.covid19api.com/country/kenya'
+    #url = 'https://api.covid19api.com/country/kenya'
 
     #url = 'https://api.covid19api.com/country/kenya'
-    df = readjsontodataframe(url)
+    #df = readjsontodataframe(url)
     # confirmed last no
-    Confirmedlastrow = df.tail(1)
-    Confirmedno = Confirmedlastrow['Confirmed'].values[0]
-    return #Confirmedno
+    #Confirmedlastrow = df.tail(1)
+    #Confirmedno = Confirmedlastrow['Confirmed'].values[0]
+
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    Total_cases = kenya['Total cases'].values[0]
+    Total_cases=int(Total_cases)
+
+
+    return Total_cases
 
 #recoverd cases ......................................................
 
@@ -369,7 +409,14 @@ def update_well_text(well_statuses):
     recoverdlastrow = df.tail(1)
     revoverdno = recoverdlastrow['Recovered'].values[0]
     revoverdno
-    return  #revoverdno
+
+
+    #world meter
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    Total_recovered = kenya['Total recovered'].values[0]
+    Total_recovered=int(Total_recovered)
+    return  Total_recovered
 
 #death.......................................................................
 
@@ -390,9 +437,28 @@ def update_well_text(well_statuses):
     Deathslastrow = df.tail(1)
     Deathsno = Deathslastrow['Deaths'].values[0]
     Deathsno
-    return  #Deathsno
+
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    Total_deaths = kenya['Total deaths'].values[0]
+
+    return  int(Total_deaths)
 
 
+#  active cases in kenya
+@app.callback(
+    Output("active", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    data = GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+    kenya = kenyadataframe(data)
+    Active_cases = kenya['Active cases'].values[0]
+    int(Active_cases)
+
+
+    return  int(Active_cases)
 
 
 
