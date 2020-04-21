@@ -51,7 +51,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             {%renderer%}
           <h><cite> 2020 ADS R&D Center  </cite></h>
           <h>&nbsp;<cite> Contact us: africadataschool@gmail.com </cite></h>
-         <h><cite>Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys,Daily Nation and Ushahidi</cite></h>
+         
         </footer>
     </body>
 </html>"""
@@ -187,16 +187,23 @@ app.layout = html.Div(
                             className="dcc_control",
                         ),
 
+                        html.P(id="worldupdate",
+                            className="control_label",
+                        ),
 
-                        html.Div(
+                        html.P(
+                            "Data is sourced from WHO,Johns Hopkins CSSE,Ministry of Health Kenya,Worldometer,Daily Nation and Ushahidi.  ",
+                            className="control_label",
+                        ),
+                        html.P(
+                            "December 2019, a local outbreak  was detected in Wuhan (Hubei, China) . The outbreak has since spread to mainland China as well as 185 other countries and regions, with more than 2 million confirmed cases as of April 17, 2020.4. In response to this ongoing public health emergency, we developed an online interactive dashboard, hosted by the Center for Research and Development at Africa Data School to visualise and track  Kenya daily reported cases of coronavirus disease.",
+                            className="control_label",
 
-                            [
-                             html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',
-                                         width=300, height=400,style={
-                            "border":"0",
-                            "framebolder":'0'
+                        ),
 
-                        })],
+                        html.P(
+                            "Credits : Africa Data School Team,Johns Hopkins,Covid19API-Kyle Redelinghuys and Ushahidi",
+                            className="control_label",
 
                         ),
 
@@ -316,7 +323,7 @@ app.layout = html.Div(
                 ),
 
                 html.Div(
-                    [   html.Label("East Africa  ( Via Daily Nation)"),
+                    [   html.Label("East Africa"),
                         html.Iframe(src='https://public.flourish.studio/visualisation/1603846/embed?auto=1', width=400,
                                     height=400,style={
                             "border":"0",
@@ -459,6 +466,23 @@ def update_well_text(well_statuses):
 
 
     return  int(Active_cases)
+
+
+
+
+#  active cases in kenya
+@app.callback(
+    Output("worldupdate", "children"), [
+        Input("kenya", "value"),
+
+    ],)
+def update_well_text(well_statuses):
+    page = requests.get('https://www.worldometers.info/coronavirus/')
+    soup = BeautifulSoup(page.text, 'html.parser')
+    titletest = soup.title.text
+
+
+    return  titletest
 
 
 
