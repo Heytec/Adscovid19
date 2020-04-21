@@ -115,6 +115,31 @@ def kenyadataframe(data):
     kenya = df[df.Country == 'Kenya']
     return kenya
 
+
+
+def alldataframe(data):
+    colnames = ['Country',
+                'Total cases',
+                'New cases',
+                'Total deaths',
+                'New deaths',
+                'Total recovered',
+                'Active cases',
+                'Serious_critical cases',
+                'Total cases/1M pop',
+                'Deaths/1M pop',
+                'Total Tests',
+                'Test/1M pop',
+                'Continent']
+
+    df = pd.DataFrame(data=data, columns=colnames)
+
+    return df
+
+data1=GetDataWordMetric('https://www.worldometers.info/coronavirus/')
+df=alldataframe(data1)
+
+
 # Create global chart template
 
 
@@ -379,10 +404,7 @@ html.Div([
                     [html.Label("Hotspot"),
                      dcc.Graph(id="map_graph",style={
                            "height": "1000px",
-                          " width": "1500px",}
-
-
-                               )
+                          " width": "1500px",})
 
                      ],
                    className="pretty_container twelve columns",
@@ -393,12 +415,41 @@ html.Div([
             className="row flex-display",
         ),
 
+        html.Div(
+            [
+                html.Div([
+
+                    dash_table.DataTable(
+                        id='table',
+                        columns=[{"name": i, "id": i} for i in df.columns],
+                        data=df.to_dict('records'), ),
+
+                ],
+                    className="pretty_container twelve columns",
+
+                ),
+
+            ],
+            className="row flex-display",
+        ),
+
+
+
+
+
+
+
+
+
+
 
 
 
     ],
     #id="mainContainer",
     style={"display": "flex", "flex-direction": "column"},
+
+
 )
 
 

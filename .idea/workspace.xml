@@ -4,7 +4,6 @@
     <list default="true" id="48731411-8db7-4457-868b-3b58518b8a73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests" beforeDir="false" afterPath="$PROJECT_DIR$/tests" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="406" lean-forward="true" selection-start-line="406" selection-end-line="406" />
+            <state relative-caret-position="455">
+              <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -202,7 +201,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -228,12 +226,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>260</line>
+          <line>285</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>214</line>
+          <line>239</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
@@ -286,8 +284,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="406" lean-forward="true" selection-start-line="406" selection-end-line="406" />
+        <state relative-caret-position="455">
+          <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
