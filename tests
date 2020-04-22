@@ -130,3 +130,101 @@
         ),
 
 
+
+
+
+
+          html.Div(
+                    [ html.Label("The map shows the county of residence of persons that have tested positive"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1',width=300,height=400,style={
+                            "border":"0",
+                            "framebolder":'0'
+
+                        })],
+                    className="pretty_container four columns",
+                ),
+
+
+
+
+
+..###########################################################################################################the where we have div :
+
+
+  html.Div(
+            [
+                html.Div(
+
+                    [  html.Label("Daily Nation • Last Update"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',width=300,height=400,style={
+                            "border":"0",
+                            "framebolder":'0'
+
+                        })],
+                    className="pretty_container three columns",
+                ),
+
+                html.Div(
+                    [html.Label("The map shows the county of residence of persons that have tested positive"),
+                     html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1', width=300,
+                                 height=400, style={
+                             "border": "0",
+                             "framebolder": '0',
+
+
+                         })],
+                    className="pretty_container four columns",
+                ),
+
+
+
+
+
+
+
+                html.Div(
+                    [
+                     html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=300,
+                                 height=400,style={
+                            "border":"0",
+                            "framebolder":'0'
+
+                        })],
+                    className="pretty_container four columns",
+                ),
+
+                html.Div(
+                    [   html.Label("East Africa"),
+                        html.Iframe(src='https://public.flourish.studio/visualisation/1603846/embed?auto=1', width=400,
+                                    height=400,style={
+                            "border":"0",
+                            "framebolder":'0'
+
+                        })],
+                    className="pretty_container four columns",
+                ),
+
+            ],
+            className="row flex-display",
+        ),
+
+
+
+
+
+<iframe src='https://flo.uri.sh/story/272103/embed' frameborder='0' scrolling='no' style='width:100%;height:600px;'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/272103/?utm_source=embed&utm_campaign=story/272103' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
+
+
+html.Div(
+            [
+html.Div([
+        html.Label("The map shows the county of residence of persons that have tested positive"),
+        html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=600,
+                    height=1200, style={
+                "border": "0",
+                'width':'100%',
+                'margin-top':'4px',
+                'text-align':'right',
+                "framebolder": '0',
+   })   ],className="pretty_container twelve columns",),], className="row flex-display", )

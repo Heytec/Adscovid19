@@ -13,6 +13,7 @@ import plotly.graph_objects as gos
 import plotly.express as px
 from bs4 import BeautifulSoup
 import dash_table
+import dash_bootstrap_components as dbc
 
 # Multi-dropdown options
 
@@ -20,8 +21,10 @@ import dash_table
 # get relative data folder
 
 app = dash.Dash(
-    __name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}]
+    __name__,meta_tags=[{"name": "viewport", "content": "width=device-width"}]
 )
+
+
 
 app.index_string = """<!DOCTYPE html>
 <html>
@@ -296,13 +299,13 @@ html.Div([
                 className="mini_container",
             ),
             html.Div(
-                     [html.H6(id="new_cases"), html.P("New Cases ")],
+                     [html.H6(id="new_cases"), html.P("New Cases Today")],
                       id="gas0",
                       className="mini_container",
                         ),
 
             html.Div(
-                            [html.H6(id="new_deaths"), html.P("New Deaths ")],
+                            [html.H6(id="new_deaths"), html.P("New Deaths Today ")],
                             id="oilO",
                             className="mini_container",
                         ),
@@ -350,53 +353,19 @@ html.Div([
             className="row flex-display",
         ),
 
-        html.Div(
-            [
-                html.Div(
 
-                    [  html.Label("Daily Nation • Last Update"),
-                        html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1',width=300,height=400,style={
-                            "border":"0",
-                            "framebolder":'0'
 
-                        })],
-                    className="pretty_container three columns",
-                ),
-                html.Div(
-                    [ html.Label("The map shows the county of residence of persons that have tested positive"),
-                        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1',width=300,height=400,style={
-                            "border":"0",
-                            "framebolder":'0'
 
-                        })],
-                    className="pretty_container four columns",
-                ),
 
-                html.Div(
-                    [
-                     html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=300,
-                                 height=400,style={
-                            "border":"0",
-                            "framebolder":'0'
 
-                        })],
-                    className="pretty_container four columns",
-                ),
 
-                html.Div(
-                    [   html.Label("East Africa"),
-                        html.Iframe(src='https://public.flourish.studio/visualisation/1603846/embed?auto=1', width=400,
-                                    height=400,style={
-                            "border":"0",
-                            "framebolder":'0'
 
-                        })],
-                    className="pretty_container four columns",
-                ),
 
-            ],
-            className="row flex-display",
-        ),
+
+
+
+
+
 
 
 
@@ -429,6 +398,38 @@ html.Div([
                 ),
 
 
+html.Div(
+            [
+html.Div([
+
+        html.Iframe(src='https://kenyacovid19.ushahidi.io/views/data', width=600,
+                    height=600, style={
+                "border": "0",
+                'width':'100%',
+                'margin-top':'4px',
+                'text-align':'right',
+                "framebolder": '0',
+   })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
+
+
+
+
+
+
+        html.Div(
+            [
+html.Div([
+        html.Label("The map shows the county of residence of persons that have tested positive"),
+        html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1', width=600,
+                    height=1200, style={
+                "border": "0",
+                'width':'100%',
+                'margin-top':'4px',
+                'text-align':'right',
+                "framebolder": '0',
+   })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
+
+
 
 
 
@@ -437,8 +438,9 @@ html.Div([
     style={"display": "flex", "flex-direction": "column"},
 
 
-)
 
+
+)
 
 
 

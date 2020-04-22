@@ -141,3 +141,25 @@ body {
   pointer-events: all;
   transform: translate(30px, 349px);
 }
+
+
+
+#iframeconte {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.iframediv {
+    position: fixed;
+    top: 80px;
+    left: 40px;
+    bottom: 25px;
+    min-width: 200px;
+    width: 40%;
+    background: black;
+}
