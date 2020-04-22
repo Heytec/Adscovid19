@@ -416,10 +416,8 @@ html.Div([
 
 
 
-        html.Div(
-            [
-html.Div([
-        html.Label("The map shows the county of residence of persons that have tested positive"),
+
+        html.Label("*The map considers where the case was diagnosed"),
         html.Iframe(src='https://public.flourish.studio/visualisation/1603839/embed?auto=1', width=600,
                     height=1200, style={
                 "border": "0",
@@ -427,7 +425,7 @@ html.Div([
                 'margin-top':'4px',
                 'text-align':'right',
                 "framebolder": '0',
-   })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
+   })
 
 
 
