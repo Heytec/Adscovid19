@@ -366,6 +366,18 @@ html.Div([
 
 
 
+html.Div(
+            [
+html.Div([
+
+        html.Iframe(src='https://public.flourish.studio/visualisation/1603849/embed?auto=1', width=600,
+                    height=400, style={
+                "border": "0",
+                'width':'100%',
+                'margin-top':'4px',
+                'text-align':'right',
+                "framebolder": '0',
+   })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
 
 
 
@@ -423,6 +435,10 @@ html.Div([
             ],
             className="row flex-display",
         ),
+
+
+
+
 
 
 
@@ -865,7 +881,7 @@ def update_figure(well_statuses):
 
     #fig.show()
 
-    return  #fig
+    return fig
 
 
 
