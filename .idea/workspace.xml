@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="373" column="28" selection-start-line="373" selection-start-column="28" selection-end-line="373" selection-end-column="28" />
+            <state relative-caret-position="308">
+              <caret line="371" column="52" selection-start-line="371" selection-start-column="52" selection-end-line="371" selection-end-column="52" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -28,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="158" column="50" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="106" />
+            <state relative-caret-position="81">
+              <caret line="157" column="64" lean-forward="true" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -201,7 +201,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -278,15 +277,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="158" column="50" selection-start-line="158" selection-start-column="41" selection-end-line="158" selection-end-column="106" />
+        <state relative-caret-position="81">
+          <caret line="157" column="64" lean-forward="true" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="373" column="28" selection-start-line="373" selection-start-column="28" selection-end-line="373" selection-end-column="28" />
+        <state relative-caret-position="308">
+          <caret line="371" column="52" selection-start-line="371" selection-start-column="52" selection-end-line="371" selection-end-column="52" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
