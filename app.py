@@ -369,33 +369,7 @@ html.Div([
 
 
 
-        html.Div(
-                    [
-                        html.Div([
 
-                            dash_table.DataTable(
-                                id='table',
-                                columns=[{"name": i, "id": i} for i in df.columns],
-                                data=df.to_dict('records'), style_table={'overflowX': 'scroll'},
-                                style_data_conditional=[{
-                                        "if": {"row_index": 7},
-                                        "backgroundColor": "#3D9970",
-                                        'color': 'white'
-                                    }]
-
-
-
-
-                            ),
-
-                        ],
-                            className="pretty_container twelve columns",
-
-                        ),
-
-                    ],
-                    className="row flex-display",
-                ),
 
 
 html.Div(
@@ -412,6 +386,43 @@ html.Div([
    })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
 
 
+html.Div(
+            [
+html.Div([
+          html.Label("East Africa"),
+        html.Iframe(src='https://public.flourish.studio/visualisation/1603846/embed?auto=1', width=600,
+                    height=350, style={
+                "border": "0",
+                'width':'100%',
+                'margin-top':'4px',
+                'text-align':'right',
+                "framebolder": '0',
+   })   ],className="pretty_container twelve columns",),], className="row flex-display", ),
+
+        html.Div(
+            [
+                html.Div([
+
+                    dash_table.DataTable(
+                        id='table',
+                        columns=[{"name": i, "id": i} for i in df.columns],
+                        data=df.to_dict('records'), style_table={'overflowX': 'scroll'},
+                        style_data_conditional=[{
+                            "if": {"row_index": 7},
+                            "backgroundColor": "#3D9970",
+                            'color': 'white'
+                        }]
+
+                    ),
+
+                ],
+                    className="pretty_container twelve columns",
+
+                ),
+
+            ],
+            className="row flex-display",
+        ),
 
 
 
