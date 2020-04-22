@@ -566,7 +566,7 @@ def update_well_text(well_statuses):
     int(Active_cases)
 
 
-    return  int(Active_cases)
+    return # int(Active_cases)
 
 
 
