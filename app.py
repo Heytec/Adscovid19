@@ -217,7 +217,9 @@ app.layout = html.Div(
                         ),
 
                         html.P(id="worldupdate",
-                            className="control_label",
+                            className="control_label",style={
+                            'font-weight': 'bold',
+                            }
                         ),
 
                         html.P(
@@ -235,6 +237,18 @@ app.layout = html.Div(
                             className="control_label",
 
                         ),
+
+                        html.P(
+                            "Covid 19 Helpline Kenya call 719 or text *719# ",
+                            className="control_label",style={
+                            'font-weight': 'bold',
+                            }
+
+                        ),
+
+
+
+
 
 
                     ],
